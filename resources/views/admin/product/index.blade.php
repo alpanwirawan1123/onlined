@@ -23,7 +23,7 @@
                 <th>No</th>
                 <th>Name</th>
                 <th>Price</th>
-                <th>Stocks</th>
+                <th>description</th>
                 <th>Photo</th>
                 <th>Action</th>
             </tr>
@@ -34,7 +34,7 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->price }}</td>
-                    <td>{{ $item->stocks }}</td>
+                    <td>{{ $item->description }}</td>
                     <td>
                         @if ($item->photo != null)
                             <div style="width:200px">
