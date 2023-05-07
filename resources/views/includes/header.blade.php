@@ -1,77 +1,147 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-    <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            @auth    
-                @if (Auth::user()->userRole->role->name == 'superadmin')
-                    @include('includes.navbar-admin')
-                @endif
-            @endauth
-            @include('includes.navbar-customer')
-
-            <ul class="navbar-nav col-6">
-                <form class="col-12 mb-2 mb-lg-0 me-lg-auto" role="search">
-                    <div class="input-group rounded-pill">
-
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            All Categories
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-
-                        <input type="text" class="form-control" placeholder="Search" aria-label="Search"
-                            id="searchNavbar">
-                    </div>
-                </form>
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ms-auto">
-                <!-- Authentication Links -->
-                @guest
-                    @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                    @endif
-
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
-            </ul>
+<header class="header" data-page="home">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <div class="logo header_logo">
+            <a class="d-inline-flex align-items-center" href="index.html">
+                <span class="logo_picture">
+                    <img src="svg/logo.svg" alt="Edison" />
+                </span>
+                <span class="text">
+                    <span class="brand">edison</span>
+                    <span class="text_secondary">courses</span>
+                </span>
+            </a>
         </div>
+        <button
+            class="header_trigger"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#headerMenu"
+            aria-controls="headerMenu"
+        >
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+        <nav class="header_nav collapse" id="headerMenu">
+            <ul class="header_nav-list">
+                <li class="header_nav-list_item">
+                    <a class="nav-item" href="index.html" data-page="home">Home</a>
+                </li>
+                <li class="header_nav-list_item dropdown">
+                    <a
+                        class="nav-link nav-item dropdown-toggle d-inline-flex align-items-center"
+                        href="courses.html"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#coursesMenu"
+                        data-trigger="dropdown"
+                        aria-expanded="false"
+                        aria-controls="coursesMenu"
+                        data-page="courses"
+                    >
+                        All Courses
+                        <i class="icon-angle-down icon"></i>
+                    </a>
+                    <div class="dropdown-menu collapse" id="coursesMenu">
+                        <ul class="dropdown-list">
+                            <li class="list-item" data-main="true">
+                                <a class="dropdown-item nav-item" data-page="courses" href="courses.html" data-main="true">
+                                    All Courses
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a class="dropdown-item nav-item" data-page="course" href="course.html">Course Description</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="header_nav-list_item">
+                    <a class="nav-item" href="about.html" data-page="about">About Us</a>
+                </li>
+                <li class="header_nav-list_item">
+                    <a class="nav-item" href="pricing.html" data-page="pricing">Prices</a>
+                </li>
+                <li class="header_nav-list_item dropdown">
+                    <a
+                        class="nav-link nav-item dropdown-toggle d-inline-flex align-items-center"
+                        href="journal.html"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#journalMenu"
+                        data-trigger="dropdown"
+                        aria-expanded="false"
+                        aria-controls="journalMenu"
+                        data-page="journal"
+                    >
+                        Journal
+                        <i class="icon-angle-down icon"></i>
+                    </a>
+                    <div class="dropdown-menu collapse" id="journalMenu">
+                        <ul class="dropdown-list">
+                            <li class="list-item" data-main="true">
+                                <a class="dropdown-item nav-item" data-page="journal" href="journal.html" data-main="true">
+                                    Journal
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a class="dropdown-item nav-item" data-page="post" href="post.html">Single Post</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="header_nav-list_item dropdown">
+                    <a
+                        class="nav-link nav-item dropdown-toggle d-inline-flex align-items-center"
+                        href="#"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#pagesMenu"
+                        data-trigger="dropdown"
+                        aria-expanded="false"
+                        aria-controls="pagesMenu"
+                        data-page=""
+                    >
+                        Pages
+                        <i class="icon-angle-down icon"></i>
+                    </a>
+                    <div class="dropdown-menu collapse" id="pagesMenu">
+                        <ul class="dropdown-list">
+                            <li class="list-item">
+                                <a class="dropdown-item nav-item" data-page="library" href="library.html">Media library</a>
+                            </li>
+                            <li class="list-item">
+                                <a class="dropdown-item nav-item" data-page="events" href="events.html">Events</a>
+                            </li>
+                            <li class="list-item">
+                                <a class="dropdown-item nav-item" data-page="teachers" href="team.html">Teachers</a>
+                            </li>
+                            <li class="list-item">
+                                <a class="dropdown-item nav-item" data-page="faq" href="faq.html">FAQ</a>
+                            </li>
+                            <li class="list-item">
+                                <a class="dropdown-item nav-item" data-page="error" href="404.html">404</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="header_nav-list_item">
+                    <a class="nav-item" href="contacts.html" data-page="contacts">Contact Us</a>
+                </li>
+            </ul>
+            <ul class="promobar_socials d-flex align-items-center justify-content-center">
+                <li class="promobar_socials-item">
+                    <a class="link" href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="icon-facebook"></i>
+                    </a>
+                </li>
+                <li class="promobar_socials-item">
+                    <a class="link" href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="icon-twitter"></i>
+                    </a>
+                </li>
+                <li class="promobar_socials-item">
+                    <a class="link" href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="icon-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
-</nav>
+</header>

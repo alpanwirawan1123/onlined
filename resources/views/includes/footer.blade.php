@@ -1,71 +1,169 @@
-<footer class="pt-5">
-    <div class="row">
-        <div class="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
-                </li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-            </ul>
-        </div>
-
-        <div class="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a>
-                </li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
-                </li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-            </ul>
-        </div>
-
-        <div class="col-6 col-md-2 mb-3">
-            <h5>Section</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a>
-                </li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
-                </li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-            </ul>
-        </div>
-
-        <div class="col-md-5 offset-md-1 mb-3">
-            <form>
-                <h5>Subscribe to our newsletter</h5>
-                <p>Monthly digest of what's new and exciting from us.</p>
-                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                    <label for="newsletter1" class="visually-hidden">Email address</label>
-                    <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                    <button class="btn btn-primary" type="button">Subscribe</button>
+<footer class="footer">
+    <div class="container">
+        <div class="footer_wrapper d-sm-flex flex-wrap flex-lg-nowrap justify-content-lg-between">
+            <div class="footer_block col-sm-6 col-lg-auto" data-order="1">
+                <div class="logo logo--footer">
+                    <a class="d-inline-flex align-items-center" href="index.html">
+                        <span class="logo_picture">
+                            <img src="svg/logo.svg" alt="Edison" />
+                        </span>
+                        <span class="text">
+                            <span class="brand">edison</span>
+                            <span class="text_secondary">courses</span>
+                        </span>
+                    </a>
                 </div>
-            </form>
+                <p class="footer_block-text">
+                    Curabitur non libero at lorem finibus lobortis. Ut auctor egestas pretium. Proin nunc ligula,
+                    venenatis tempor
+                </p>
+                <ul class="footer_block-socials d-flex align-items-center">
+                    <li class="footer_block-socials_item">
+                        <a class="link" href="https://www.facebook.com" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="icon-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="footer_block-socials_item">
+                        <a class="link" href="https://www.twitter.com" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="icon-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="footer_block-socials_item">
+                        <a class="link" href="https://www.instagram.com" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="icon-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="wrapper d-flex flex-column">
+                    <a class="link link--contacts text text--sm d-inline-flex align-items-center"
+                        href="mailto:example@domain.com">
+                        <i class="icon-envelope icon"></i>
+                        acadesiq@mail.com
+                    </a>
+                    <a class="link link--contacts text text--sm d-inline-flex align-items-center"
+                        href="tel:+123456789">
+                        <i class="icon-phone-solid icon"></i>
+                        +1-202-555-0190
+                    </a>
+                </div>
+            </div>
+            <div class="footer_block col-sm-6 col-lg-auto" data-order="2">
+                <h5 class="footer_block-header">Information:</h5>
+                <ul class="footer_block-nav">
+                    <li class="footer_block-nav_item">
+                        <a class="link" href="about.html">About This Project</a>
+                    </li>
+                    <li class="footer_block-nav_item">
+                        <a class="link" href="contacts.html">Contact Us</a>
+                    </li>
+                    <li class="footer_block-nav_item">
+                        <a class="link" href="courses.html">All Courses</a>
+                    </li>
+                    <li class="footer_block-nav_item">
+                        <a class="link" href="journal.html">From the Blog</a>
+                    </li>
+                    <li class="footer_block-nav_item">
+                        <a class="link" href="library.html">Media Library</a>
+                    </li>
+                    <li class="footer_block-nav_item">
+                        <a class="link" href="faq.html">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_block col-sm-6 col-lg-auto m-sm-0" data-order="3">
+                <h5 class="footer_block-header">Popular Courses:</h5>
+                <ul class="footer_block-list">
+                    <li class="footer_block-list_item d-flex align-items-baseline">
+                        <span class="marker"></span>
+                        <a class="link" href="course.html">Data Science Fundamentals CS with Python and SQL</a>
+                    </li>
+                    <li class="footer_block-list_item d-flex align-items-baseline">
+                        <span class="marker"></span>
+                        <a class="link" href="course.html">AWS Certified Developer - Associate 2020</a>
+                    </li>
+                    <li class="footer_block-list_item d-flex align-items-baseline">
+                        <span class="marker"></span>
+                        <a class="link" href="course.html">How to Draw From Beginner to Master</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_block col-sm-6 col-lg-auto" data-order="4">
+                <h5 class="footer_block-header">Instagram:</h5>
+                <ul class="footer_block-instagram d-grid">
+                    <li class="footer_block-instagram_item">
+                        <a class="link" href="https://www.instagram.com" target="_blank"
+                            rel="noopener noreferrer">
+                            <picture>
+                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
+                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg"
+                                    alt="media" />
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="footer_block-instagram_item">
+                        <a class="link" href="https://www.instagram.com" target="_blank"
+                            rel="noopener noreferrer">
+                            <picture>
+                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
+                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg"
+                                    alt="media" />
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="footer_block-instagram_item">
+                        <a class="link" href="https://www.instagram.com" target="_blank"
+                            rel="noopener noreferrer">
+                            <picture>
+                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
+                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg"
+                                    alt="media" />
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="footer_block-instagram_item">
+                        <a class="link" href="https://www.instagram.com" target="_blank"
+                            rel="noopener noreferrer">
+                            <picture>
+                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
+                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg"
+                                    alt="media" />
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="footer_block-instagram_item">
+                        <a class="link" href="https://www.instagram.com" target="_blank"
+                            rel="noopener noreferrer">
+                            <picture>
+                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
+                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg"
+                                    alt="media" />
+                            </picture>
+                        </a>
+                    </li>
+                    <li class="footer_block-instagram_item">
+                        <a class="link" href="https://www.instagram.com" target="_blank"
+                            rel="noopener noreferrer">
+                            <picture>
+                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
+                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg"
+                                    alt="media" />
+                            </picture>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-
-    <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4 border-top">
-        <p>© 2023 Company, Inc. All rights reserved.</p>
-        <ul class="list-unstyled d-flex">
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24"
-                        height="24">
-                        <use xlink:href="#twitter"></use>
-                    </svg></a></li>
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24"
-                        height="24">
-                        <use xlink:href="#instagram"></use>
-                    </svg></a></li>
-            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24"
-                        height="24">
-                        <use xlink:href="#facebook"></use>
-                    </svg></a></li>
-        </ul>
+    <div class="footer_secondary">
+        <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-sm-between">
+            <a class="footer_secondary-scroll" id="scrollToTop" href="#">
+                <i class="icon-angle-up icon"></i>
+            </a>
+            <p class="footer_secondary-copyright">Copyright @ <span id="currentYear"></span> Edison by Merkulove
+            </p>
+        </div>
     </div>
 </footer>
