@@ -2,22 +2,17 @@
     <div class="container d-flex flex-wrap justify-content-between align-items-center">
         <div class="logo header_logo">
             <a class="d-inline-flex align-items-center" href="index.html">
-                <span class="logo_picture">
+                {{-- <span class="logo_picture">
                     <img src="svg/logo.svg" alt="Edison" />
-                </span>
+                </span> --}}
                 <span class="text">
-                    <span class="brand">edison</span>
+                    <span class="brand">OnliNed</span>
                     <span class="text_secondary">courses</span>
                 </span>
             </a>
         </div>
-        <button
-            class="header_trigger"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#headerMenu"
-            aria-controls="headerMenu"
-        >
+        <button class="header_trigger" type="button" data-bs-toggle="collapse" data-bs-target="#headerMenu"
+            aria-controls="headerMenu">
             <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
@@ -27,120 +22,42 @@
                 <li class="header_nav-list_item">
                     <a class="nav-item" href="index.html" data-page="home">Home</a>
                 </li>
-                <li class="header_nav-list_item dropdown">
-                    <a
-                        class="nav-link nav-item dropdown-toggle d-inline-flex align-items-center"
-                        href="courses.html"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#coursesMenu"
-                        data-trigger="dropdown"
-                        aria-expanded="false"
-                        aria-controls="coursesMenu"
-                        data-page="courses"
-                    >
-                        All Courses
-                        <i class="icon-angle-down icon"></i>
-                    </a>
-                    <div class="dropdown-menu collapse" id="coursesMenu">
-                        <ul class="dropdown-list">
-                            <li class="list-item" data-main="true">
-                                <a class="dropdown-item nav-item" data-page="courses" href="courses.html" data-main="true">
-                                    All Courses
-                                </a>
-                            </li>
-                            <li class="list-item">
-                                <a class="dropdown-item nav-item" data-page="course" href="course.html">Course Description</a>
-                            </li>
-                        </ul>
-                    </div>
+                <li class="header_nav-list_item">
+                    <a class="nav-item" href="courses.html" data-page="courses">Courses</a>
+                </li>
+                <li class="header_nav-list_item">
+                    <a class="nav-item" href="teachers.html" data-page="teachers">Teachers</a>
                 </li>
                 <li class="header_nav-list_item">
                     <a class="nav-item" href="about.html" data-page="about">About Us</a>
                 </li>
-                <li class="header_nav-list_item">
-                    <a class="nav-item" href="pricing.html" data-page="pricing">Prices</a>
-                </li>
-                <li class="header_nav-list_item dropdown">
-                    <a
-                        class="nav-link nav-item dropdown-toggle d-inline-flex align-items-center"
-                        href="journal.html"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#journalMenu"
-                        data-trigger="dropdown"
-                        aria-expanded="false"
-                        aria-controls="journalMenu"
-                        data-page="journal"
-                    >
-                        Journal
-                        <i class="icon-angle-down icon"></i>
-                    </a>
-                    <div class="dropdown-menu collapse" id="journalMenu">
-                        <ul class="dropdown-list">
-                            <li class="list-item" data-main="true">
-                                <a class="dropdown-item nav-item" data-page="journal" href="journal.html" data-main="true">
-                                    Journal
-                                </a>
+                @if (Route::has('login'))
+                    @auth
+                        <li class="header_nav-list_item">
+                            <a href="{{ route('home.index') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Hi
+                                {{ Auth::user()->name }}</a>
+                        </li>
+                        <li class="header_nav-list_item">
+                            <a class="btn btn-dark" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
+                        
+                    @else
+                        <li class="header_nav-list_item">
+                            <a href="{{ route('login') }}" class="btn btn-primary">Log in</a>
+                        </li>
+                        @if (Route::has('register'))
+                            <li class="header_nav-list_item">
+                                <a href="{{ route('register') }}" class="btn btn-dark">Register</a>
                             </li>
-                            <li class="list-item">
-                                <a class="dropdown-item nav-item" data-page="post" href="post.html">Single Post</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="header_nav-list_item dropdown">
-                    <a
-                        class="nav-link nav-item dropdown-toggle d-inline-flex align-items-center"
-                        href="#"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#pagesMenu"
-                        data-trigger="dropdown"
-                        aria-expanded="false"
-                        aria-controls="pagesMenu"
-                        data-page=""
-                    >
-                        Pages
-                        <i class="icon-angle-down icon"></i>
-                    </a>
-                    <div class="dropdown-menu collapse" id="pagesMenu">
-                        <ul class="dropdown-list">
-                            <li class="list-item">
-                                <a class="dropdown-item nav-item" data-page="library" href="library.html">Media library</a>
-                            </li>
-                            <li class="list-item">
-                                <a class="dropdown-item nav-item" data-page="events" href="events.html">Events</a>
-                            </li>
-                            <li class="list-item">
-                                <a class="dropdown-item nav-item" data-page="teachers" href="team.html">Teachers</a>
-                            </li>
-                            <li class="list-item">
-                                <a class="dropdown-item nav-item" data-page="faq" href="faq.html">FAQ</a>
-                            </li>
-                            <li class="list-item">
-                                <a class="dropdown-item nav-item" data-page="error" href="404.html">404</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="header_nav-list_item">
-                    <a class="nav-item" href="contacts.html" data-page="contacts">Contact Us</a>
-                </li>
-            </ul>
-            <ul class="promobar_socials d-flex align-items-center justify-content-center">
-                <li class="promobar_socials-item">
-                    <a class="link" href="#" target="_blank" rel="noopener noreferrer">
-                        <i class="icon-facebook"></i>
-                    </a>
-                </li>
-                <li class="promobar_socials-item">
-                    <a class="link" href="#" target="_blank" rel="noopener noreferrer">
-                        <i class="icon-twitter"></i>
-                    </a>
-                </li>
-                <li class="promobar_socials-item">
-                    <a class="link" href="#" target="_blank" rel="noopener noreferrer">
-                        <i class="icon-instagram"></i>
-                    </a>
-                </li>
+                        @endif
+
+                    @endauth
+                @endif
             </ul>
         </nav>
     </div>
