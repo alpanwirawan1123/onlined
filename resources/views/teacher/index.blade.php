@@ -24,7 +24,7 @@
             <div class="underlay"></div>
             <div class="container">
                 <div class="content-wrapper">
-                    <h1 class="page_main-header">Team</h1>
+                    <h1 class="page_main-header">Pengajar</h1>
                     <p class="page_main-text">
                         Donec accumsan, dolor ac malesuada rhoncus, leo arcu pellentesque dolor, nec tristique diam neque
                         vitae sem.
@@ -50,7 +50,12 @@
                         data-media="img/team/01">
 
                         @if ($item->photo != null)
-                            <img src="{{ asset('storage/' . $item->photo) }}" class="img-thumbnail" alt="...">
+                            <div class="media">
+                              <picture>
+                                  <source data-srcset="{{ asset('storage/' . $item->photo) }}" srcset="{{ asset('storage/' . $item->photo) }}" />
+                                  <img class="lazy" data-src="{{ asset('storage/' . $item->photo) }}" src="{{ asset('storage/' . $item->photo) }}" alt="media" />
+                              </picture>
+                          </div>
                         @else
                             <span class="top_icon top_icon--blue">
                                 <i class="icon-code-solid icon"></i>

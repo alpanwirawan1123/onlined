@@ -17,16 +17,17 @@ class EnsureAuthCustomer
      */
     public function handle(Request $request, Closure $next)
     {
+        if(!Auth::check()){
+            return redirect()->route('login');
+        }
         $user = Auth::user();
-        // dd($user);
-        if ($user) {
-            $role = $user->userRole->role->name;
 
-            if ($role == 'customer' || $role == 'superadmin') {
-                return $next($request);
-            }else {
-                return false;
-            }
+        $role = $user->userRole->role->name;
+
+        if ($role == 'customer' || $role == 'superadmin') {
+            return $next($request);
+        }else {
+            return redirect()->route('login');
         }
     }
 }

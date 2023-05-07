@@ -18,7 +18,7 @@ class EnsureAuthAdmin
     public function handle(Request $request, Closure $next)
     {
         if(!Auth::check()){
-            return redirect('/');
+            return redirect()->route('login');
         }
 
         $user = Auth::user();
@@ -28,7 +28,7 @@ class EnsureAuthAdmin
         if ($role == 'superadmin') {
             return $next($request);
         }else {
-            return redirect()->back();
+            return redirect()->route('login');
         }
     }
 }
