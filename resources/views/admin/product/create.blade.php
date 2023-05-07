@@ -17,6 +17,14 @@
             <input type="text" name="name" class="form-control" id="name">
         </div>
         <div class="mb-3">
+            <label for="category_id" class="form-label">Kategori</label>
+            <select name="category_id" id="category_id" class="form-control">
+                @foreach ($categories as $item)
+                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="price" class="form-label">Harga</label>
             <input type="number" name="price" class="form-control" id="price">
         </div>

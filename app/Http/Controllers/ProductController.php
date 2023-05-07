@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        $categories = Category::all();
+        return view('admin.product.create', compact('categories'));
     }
 
     /**
@@ -48,7 +50,8 @@ class ProductController extends Controller
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
-            'photo' => $photo_path
+            'photo' => $photo_path,
+            'category_id' => $request->category_id,
         ];
 
         $product = Product::create($data);
@@ -76,7 +79,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        return view('admin.product.update', compact('product'));
+        $categories = Category::all();
+        return view('admin.product.update', compact('product','categories'));
     }
 
     /**
@@ -89,18 +93,23 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $file = $request->file('photo');
-        $filename = time() . '.' . $file->getClientOriginalExtension();
-        $photo_path = $request->file('photo')->storeAs('public/products',$filename);
+        if ($file != null) {
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $photo_path = $request->file('photo')->storeAs('public/products',$filename);
+            //menghapus string 'public/' karena dapat menyulitkan pemanggilan di blade.
+            $photo_path = str_replace('public/','',$photo_path); 
+        }
 
-        //menghapus string 'public/' karena dapat menyulitkan pemanggilan di blade.
-        $photo_path = str_replace('public/','',$photo_path); 
 
         $product = Product::find($id);
 
         $product->name = $request->name;
         $product->price = $request->price;
         $product->description = $request->description;
-        $product->photo = $photo_path;
+        if ($file != null) {
+            $product->photo = $photo_path;
+        }
+        $product->category_id = $request->category_id;
         $product->save();
 
         return redirect()->route('admin.product.index');

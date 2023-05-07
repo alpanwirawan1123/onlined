@@ -10,12 +10,21 @@
 
 @section('content')
     <h5 class="mb-4">Edit Product</h5>
-    <form action="{{ route('admin.product.update',$product->id) }}" method="post" enctype="multipart/form-data">
-        @method("PUT")
+    <form action="{{ route('admin.product.update', $product->id) }}" method="post" enctype="multipart/form-data">
+        @method('PUT')
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Nama</label>
             <input type="text" name="name" class="form-control" id="name" value="{{ $product->name }}">
+        </div>
+        <div class="mb-3">
+            <label for="category_id" class="form-label">Kategori</label>
+            <select name="category_id" id="category_id" class="form-control">
+                @foreach ($categories as $item)
+                    <option value="{{ $item->id }}" @if ($item->id == $product->category_id) selected @endif>
+                        {{ $item->name }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Harga</label>
@@ -23,7 +32,7 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea name="description" id="description" class="form-control" rows="10"></textarea>
+            <textarea name="description" id="description" class="form-control" rows="10">{{ $product->description }}</textarea>
         </div>
         <div class="mb-3">
             <label for="photo" class="form-label">Photo</label>

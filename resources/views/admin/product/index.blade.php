@@ -24,7 +24,8 @@
                 <th>No</th>
                 <th>Name</th>
                 <th>Price</th>
-                <th>description</th>
+                <th>Deskripsi</th>
+                <th>Kategori</th>
                 <th>Photo</th>
                 <th>Action</th>
             </tr>
@@ -36,6 +37,7 @@
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->price }}</td>
                     <td>{{ $item->description }}</td>
+                    <td>{{ $item->fkCategory != null ? $item->fkCategory->name : '-' }}</td>
                     <td>
                         @if ($item->photo != null)
                             <div style="width:200px">

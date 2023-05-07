@@ -11,12 +11,12 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view('category.index', compact('categories'));
+        return view('admin.category.index', compact('categories'));
     }
 
     public function create(Request $request)
     {
-        return view('category.create');
+        return view('admin.category.create');
     }
 
     public function store(Request $request)
