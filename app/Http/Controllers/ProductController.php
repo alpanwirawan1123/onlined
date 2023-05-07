@@ -47,7 +47,7 @@ class ProductController extends Controller
         $data = [
             'name' => $request->name,
             'price' => $request->price,
-            'stocks' => $request->stocks,
+            'description' => $request->description,
             'photo' => $photo_path
         ];
 
@@ -99,7 +99,7 @@ class ProductController extends Controller
 
         $product->name = $request->name;
         $product->price = $request->price;
-        $product->stocks = $request->stocks;
+        $product->description = $request->description;
         $product->photo = $photo_path;
         $product->save();
 
