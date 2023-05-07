@@ -17,7 +17,7 @@
     <!-- Sidebar -->
 
     <!-- Navbar -->
-    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
         <!-- Container wrapper -->
         <div class="container-fluid">
             <!-- Toggle button -->
@@ -26,14 +26,13 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-
             <!-- Right links -->
             <ul class="navbar-nav ms-auto d-flex flex-row">
                 <!-- Notification dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#"
                         id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-bell"></i>
+                        <i class="text-white fas fa-bell"></i>
                         <span class="badge rounded-pill badge-notification bg-danger">1</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
@@ -52,13 +51,13 @@
                 <!-- Icon -->
                 <li class="nav-item">
                     <a class="nav-link me-3 me-lg-0" href="#">
-                        <i class="fas fa-fill-drip"></i>
+                        <i class="text-white fas fa-fill-drip"></i>
                     </a>
                 </li>
                 <!-- Icon -->
                 <li class="nav-item me-3 me-lg-0">
                     <a class="nav-link" href="#">
-                        <i class="fab fa-github"></i>
+                        <i class="text-white fab fa-github"></i>
                     </a>
                 </li>
 
@@ -66,12 +65,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown"
                         role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <i class="flag-united-kingdom flag m-0"></i>
+                        <i class="text-white flag-united-kingdom flag m-0"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li>
                             <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English
-                                <i class="fa fa-check text-success ms-2"></i></a>
+                                <i class="text-white fa fa-check text-success ms-2"></i></a>
                         </li>
                         <li>
                             <hr class="dropdown-divider" />

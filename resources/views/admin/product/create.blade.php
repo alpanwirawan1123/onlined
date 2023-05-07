@@ -22,7 +22,7 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">description</label>
-            <input type="number" name="description" class="form-control" id="description">
+            <textarea name="description" id="description" class="form-control" rows="10"></textarea>
         </div>
         <div class="mb-3">
             <label for="photo" class="form-label">Photo</label>
