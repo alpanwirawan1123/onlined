@@ -5,6 +5,9 @@
       <h3 class="text-white">Dashboard</h3>
         <div class="position-sticky">
             <div class="list-group list-group-flush mx-3 mt-4">
+                <a href="{{ route('admin.teacher.index') }}" class="list-group-item list-group-item-action py-2 ripple bg-dark">
+                    <i class="text-white fas fa-chart-area fa-fw me-3"></i><span class="text-white">Teacher</span>
+                </a>
                 <a href="{{ route('admin.category.index') }}" class="list-group-item list-group-item-action py-2 ripple bg-dark">
                     <i class="text-white fas fa-chart-area fa-fw me-3"></i><span class="text-white">Category</span>
                 </a>

@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Product Index Page')
+@section('title', 'Pengajar Index Page')
 
 @section('scripts')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
@@ -9,10 +9,10 @@
 @endsection
 
 @section('content')
-    <h5 class="mb-4">Daftar Product</h5>
+    <h5 class="mb-4">Daftar Pengajar</h5>
     @auth
         <div class="d-flex mb-4">
-            <a href="{{ route('admin.product.create') }}" type="button" class="ms-auto btn btn-primary">
+            <a href="{{ route('admin.teacher.create') }}" type="button" class="ms-auto btn btn-primary">
                 Tambah
             </a>
         </div>
@@ -23,23 +23,19 @@
             <tr>
                 <th>No</th>
                 <th>Name</th>
-                <th>Price</th>
                 <th>Deskripsi</th>
-                <th>Kategori</th>
-                <th>Pengajar</th>
+                <th>Jam Kerja</th>
                 <th>Photo</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($products as $item)
+            @foreach ($teachers as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->price }}</td>
                     <td>{{ $item->description }}</td>
-                    <td>{{ $item->fkCategory != null ? $item->fkCategory->name : '-' }}</td>
-                    <td>{{ $item->fkTeacher != null ? $item->fkTeacher->name : '-' }}</td>
+                    <td>{{ $item->work_hour }}</td>
                     <td>
                         @if ($item->photo != null)
                             <div style="width:200px">
@@ -50,9 +46,9 @@
                         @endif
                     </td>
                     <td class="d-flex">
-                        <a href="{{ route('admin.product.edit', $item->id) }}" type="button"
+                        <a href="{{ route('admin.teacher.edit', $item->id) }}" type="button"
                             class="btn btn-primary me-3">Edit</a>
-                        <form action="{{ route('admin.product.destroy', $item->id) }}" method="post">
+                        <form action="{{ route('admin.teacher.destroy', $item->id) }}" method="post">
                             @csrf
                             <button type="submit" class="btn btn-danger me-3">Delete</button>
                         </form>

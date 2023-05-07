@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Public\ProductController;
+use App\Http\Controllers\Public\TeacherController;
 use App\Http\Middleware\EnsureAuthCustomer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::middleware(EnsureAuthCustomer::class)->group(function () {
     Route::prefix('product')->name('product.')->group(function () {
         Route::get('/',[ProductController::class,'index'])->name('index');
+    });
+    Route::prefix('teacher')->name('teacher.')->group(function () {
+        Route::get('/',[TeacherController::class,'index'])->name('index');
     });
 });
 

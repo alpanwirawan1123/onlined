@@ -34,8 +34,8 @@
 
                                 <div class="wrapper d-flex flex-column">
                                     <h5 class="top_title">{{ $item->name }}</h5>
-                                    <span class="top_author">by Adrian Dawson school</span>
-                                    <span class="top_details">48 lectures ( 280 Hours)</span>
+                                    <span class="top_author">{{ $item->fkTeacher != null ? $item->fkTeacher->name : '-'}}</span>
+                                    <span class="top_details">{{ $item->fkTeacher != null ? $item->fkTeacher->work_hour : '-' }} of Work Hour</span>
                                 </div>
                             </div>
                             <div class="pricing">

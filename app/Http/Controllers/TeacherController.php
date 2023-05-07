@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Product;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view('admin.product.index',compact('products'));
+        $teachers = Teacher::all();
+        return view('admin.teacher.index',compact('teachers'));
     }
 
     /**
@@ -27,9 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        $teachers = Teacher::all();
-        return view('admin.product.create', compact('categories','teachers'));
+        return view('admin.teacher.create');
     }
 
     /**
@@ -43,23 +39,21 @@ class ProductController extends Controller
 
         $file = $request->file('photo');
         $filename = time() . '.' . $file->getClientOriginalExtension();
-        $photo_path = $request->file('photo')->storeAs('public/products',$filename);
+        $photo_path = $request->file('photo')->storeAs('public/teachers',$filename);
 
         //menghapus string 'public/' karena dapat menyulitkan pemanggilan di blade.
         $photo_path = str_replace('public/','',$photo_path); 
 
         $data = [
             'name' => $request->name,
-            'price' => $request->price,
             'description' => $request->description,
+            'work_hour' => $request->work_hour,            
             'photo' => $photo_path,
-            'category_id' => $request->category_id,
-            'teacher_id' => $request->teacher_id,
         ];
 
-        $product = Product::create($data);
+        $teacher = Teacher::create($data);
 
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.teacher.index');
     }
 
     /**
@@ -81,10 +75,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::find($id);
-        $categories = Category::all();
-        $teachers = Teacher::all();
-        return view('admin.product.update', compact('product','categories','teachers'));
+        $teacher = Teacher::find($id);
+        return view('admin.teacher.update', compact('teacher'));
     }
 
     /**
@@ -99,25 +91,23 @@ class ProductController extends Controller
         $file = $request->file('photo');
         if ($file != null) {
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $photo_path = $request->file('photo')->storeAs('public/products',$filename);
+            $photo_path = $request->file('photo')->storeAs('public/teachers',$filename);
             //menghapus string 'public/' karena dapat menyulitkan pemanggilan di blade.
             $photo_path = str_replace('public/','',$photo_path); 
         }
 
 
-        $product = Product::find($id);
+        $teacher = Teacher::find($id);
 
-        $product->name = $request->name;
-        $product->price = $request->price;
-        $product->description = $request->description;
+        $teacher->name = $request->name;
+        $teacher->description = $request->description;
+        $teacher->work_hour = $request->work_hour;
         if ($file != null) {
-            $product->photo = $photo_path;
+            $teacher->photo = $photo_path;
         }
-        $product->category_id = $request->category_id;
-        $product->teacher_id = $request->teacher_id;
-        $product->save();
+        $teacher->save();
 
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.teacher.index');
     }
 
     /**
@@ -128,9 +118,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::find($id);
-        $product->delete();
+        $teacher = Teacher::find($id);
+        $teacher->delete();
 
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.teacher.index');
     }
 }

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->float('price',15,8);
             $table->text('description');
+            $table->unsignedBigInteger('teacher_id')->nullable();
+            $table->foreign('teacher_id')->references('id')->on('teachers');
             $table->timestamps();
         });
     }

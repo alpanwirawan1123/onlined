@@ -20,13 +20,13 @@
         <nav class="header_nav collapse" id="headerMenu">
             <ul class="header_nav-list">
                 <li class="header_nav-list_item">
-                    <a class="nav-item" href="index.html" data-page="home">Home</a>
+                    <a class="nav-item" href="{{ route('home.index') }}" data-page="home">Home</a>
                 </li>
                 <li class="header_nav-list_item">
-                    <a class="nav-item" href="courses.html" data-page="courses">Courses</a>
+                    <a class="nav-item" href="{{ route('product.index') }}" data-page="courses">Courses</a>
                 </li>
                 <li class="header_nav-list_item">
-                    <a class="nav-item" href="teachers.html" data-page="teachers">Teachers</a>
+                    <a class="nav-item" href="{{ route('teacher.index') }}" data-page="teachers">Teachers</a>
                 </li>
                 <li class="header_nav-list_item">
                     <a class="nav-item" href="about.html" data-page="about">About Us</a>

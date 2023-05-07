@@ -28,6 +28,7 @@
 <body>
     @include('includes.header')
     <!-- homepage content start -->
+    @yield('header')
     <main>
         @yield('content')
     </main>
@@ -45,6 +46,8 @@
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="{{ asset('template//js/common.min.js') }}"></script>
+
+    @yield('js')
 </body>
 
 </html>

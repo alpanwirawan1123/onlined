@@ -37,6 +37,15 @@
             <input type="file" name="photo" class="form-control" id="photo">
         </div>
 
+        <div class="mb-3">
+            <label for="teacher_id" class="form-label">Pengajar</label>
+            <select name="teacher_id" id="teacher_id" class="form-control">
+                @foreach ($teachers as $item)
+                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="d-flex">
             <button type="submit" class="btn btn-primary me-3">Simpan</button>
             <a href="{{ route('admin.product.index') }}" type="button" class="btn btn-danger">Batal</a>
