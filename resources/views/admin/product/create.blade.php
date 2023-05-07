@@ -21,8 +21,8 @@
             <input type="number" name="price" class="form-control" id="price">
         </div>
         <div class="mb-3">
-            <label for="stocks" class="form-label">Stock</label>
-            <input type="number" name="stocks" class="form-control" id="stocks">
+            <label for="description" class="form-label">description</label>
+            <input type="number" name="description" class="form-control" id="description">
         </div>
         <div class="mb-3">
             <label for="photo" class="form-label">Photo</label>
