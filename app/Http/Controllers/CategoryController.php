@@ -2,12 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        # code...
+        $categories = Category::all();
+
+        return view('category.index', compact('categories'));
+    }
+
+    public function create(Request $request)
+    {
+        return view('category.create');
+    }
+
+    public function store(Request $request)
+    {
+        $category = Category::create([
+            'name' => $request->name
+        ]);
+
+        return redirect()->route('admin.category.index');
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $category = Category::find($id);
+
+        if ($category) {
+            $category->delete();
+        }
+
+        return redirect()->route('admin.category.index');
     }
 }

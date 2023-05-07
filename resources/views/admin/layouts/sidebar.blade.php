@@ -1,15 +1,15 @@
 <!--Main Navigation-->
 <header>
     <!-- Sidebar -->
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-      <h3>Dashboard</h3>
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-dark">
+      <h3 class="text-white">Dashboard</h3>
         <div class="position-sticky">
             <div class="list-group list-group-flush mx-3 mt-4">
-                <a href="{{ route('admin.product.index') }}" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-area fa-fw me-3"></i><span>Product</span>
+                <a href="{{ route('admin.category.index') }}" class="list-group-item list-group-item-action py-2 ripple bg-dark">
+                    <i class="text-white fas fa-chart-area fa-fw me-3"></i><span class="text-white">Category</span>
                 </a>
-                <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-area fa-fw me-3"></i><span>Category</span>
+                <a href="{{ route('admin.product.index') }}" class="list-group-item list-group-item-action py-2 ripple bg-dark">
+                    <i class="text-white fas fa-chart-area fa-fw me-3"></i><span class="text-white">Product</span>
                 </a>
             </div>
         </div>
@@ -23,7 +23,7 @@
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
                 aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+                <i class="text-white fas fa-bars"></i>
             </button>
 
             <!-- Right links -->

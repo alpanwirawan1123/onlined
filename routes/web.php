@@ -20,9 +20,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('home.index');
-})->name('home.index');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
 Route::middleware(EnsureAuthCustomer::class)->group(function () {
     Route::prefix('product')->name('product.')->group(function () {
