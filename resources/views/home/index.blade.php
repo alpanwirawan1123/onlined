@@ -3,7 +3,7 @@
 @section('title', 'Home | Onlined')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('template/css/index.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('template/edison/css/index.min.css') }}" />
 @endsection
 
 @section('content')

@@ -20,9 +20,9 @@
     <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async="">
     </script>
     <script src="https://www.youtube.com/player_api"></script>
-    <link rel="stylesheet preload" as="style" href="{{ asset('template/css/preload.min.css') }}" />
-    <link rel="stylesheet preload" as="style" href="{{ asset('template/css/icomoon.css') }}" />
-    <link rel="stylesheet preload" as="style" href="{{ asset('template/css/libs.min.css') }}" />
+    <link rel="stylesheet preload" as="style" href="{{ asset('template/edison/css/preload.min.css') }}" />
+    <link rel="stylesheet preload" as="style" href="{{ asset('template/edison/css/icomoon.css') }}" />
+    <link rel="stylesheet preload" as="style" href="{{ asset('template/edison/css/libs.min.css') }}" />
 
     @yield('styles')
     @yield('scripts')
@@ -44,7 +44,7 @@
     </script>
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="{{ asset('template/js/common.min.js') }}"></script>
+    <script src="{{ asset('template/edison/js/common.min.js') }}"></script>
 </body>
 
 </html>
